@@ -1,0 +1,214 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(26, 10, 11, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(236, 210, 170, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar--scrolled {
+  background: rgba(26, 10, 11, 0.99);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar__logo-img {
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+  border: 1px solid rgba(236, 210, 170, 0.25);
+  padding: 3px;
+  background: var(--secondary);
+  transition: opacity 0.3s ease;
+}
+
+.navbar__logo:hover .navbar__logo-img {
+  opacity: 0.9;
+}
+
+.navbar__logo-tagline {
+  font-family: var(--font-english);
+  font-size: 0.65rem;
+  color: rgba(236, 210, 170, 0.5);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Nav links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  font-family: var(--font-english);
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  color: rgba(236, 210, 170, 0.7);
+  padding: 0.5rem 0.75rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: var(--secondary);
+  transition: width 0.3s ease;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--secondary);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 70%;
+}
+
+.navbar__reserve {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  color: var(--secondary);
+  font-family: var(--font-english);
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(236, 210, 170, 0.5);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.navbar__reserve:hover {
+  background: var(--secondary);
+  color: var(--primary);
+  border-color: var(--secondary);
+}
+
+/* Hamburger */
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--secondary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+/* Overlay */
+.navbar__overlay {
+  display: none;
+}
+
+/* Tablet / Mobile */
+@media (max-width: 960px) {
+  .navbar__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--primary-dark);
+    padding: 2rem 1.5rem;
+    gap: 0.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    border-left: 1px solid rgba(236, 210, 170, 0.1);
+  }
+
+  .navbar__links--open {
+    transform: translateX(0);
+  }
+
+  .navbar__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .navbar__link {
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(236, 210, 170, 0.06);
+  }
+
+  .navbar__reserve {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__inner {
+    padding: 0 1rem;
+    height: 68px;
+  }
+
+  .navbar__logo-img {
+    height: 46px;
+  }
+
+  .navbar__logo-tagline {
+    display: none;
+  }
+
+  .navbar__links {
+    top: 68px;
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(236, 210, 170, 0.1);
+  }
+}
