@@ -3,6 +3,7 @@ import {
   FaInstagram, FaTiktok, FaPinterest,
   FaPhone, FaEnvelope, FaMapMarkerAlt, FaGlobe
 } from 'react-icons/fa'
+import logoImg from '/public/logo.png'
 import './Footer.css'
 
 export default function Footer() {
@@ -15,7 +16,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="footer__brand">
               <div className="footer__logo">
-                <img src="/logo.png" alt="Qissa Urdu Café" className="footer__logo-img" />
+                <img src={logoImg} alt="Qissa Urdu Café" className="footer__logo-img" />
                 <div>
                   <span className="footer__logo-tagline">Qissa Urdu Café</span>
                 </div>

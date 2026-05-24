@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaCalendarAlt, FaMicrophone, FaPen, FaBook } from 'react-icons/fa'
+import logoImg from '/public/logo.png'
 import './Home.css'
 
 const featuredAreas = [
@@ -124,7 +125,7 @@ export default function Home() {
             </div>
             <div className="home-intro__visual">
               <div className="home-intro__deco-box">
-                <img src="/logo.png" alt="Qissa Urdu Café" className="home-intro__logo-img" />
+                <img src={logoImg} alt="Qissa Urdu Café" className="home-intro__logo-img" />
                 <div className="home-intro__deco-info">
                   <div className="home-intro__stat">
                     <span className="home-intro__stat-num">2024</span>

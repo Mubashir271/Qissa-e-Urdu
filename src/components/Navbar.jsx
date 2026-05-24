@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import logoImg from '/public/logo.png'
 import './Navbar.css'
 
 const navLinks = [
@@ -33,7 +34,7 @@ export default function Navbar() {
       <div className="navbar__inner">
         <Link to="/" className="navbar__logo" onClick={() => setOpen(false)}>
           <img
-            src="/logo.png"
+            src={logoImg}
             alt="Qissa Urdu Café"
             className="navbar__logo-img"
           />
