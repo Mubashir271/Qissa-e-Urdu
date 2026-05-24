@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaCalendarAlt, FaMicrophone, FaPen, FaBook } from 'react-icons/fa'
-import logoImg from '/public/logo.png'
+import logoImg from '../assets/logo.png'
 import './Home.css'
 
 const featuredAreas = [

@@ -3,7 +3,7 @@ import {
   FaInstagram, FaTiktok, FaPinterest,
   FaPhone, FaEnvelope, FaMapMarkerAlt, FaGlobe
 } from 'react-icons/fa'
-import logoImg from '/public/logo.png'
+import logoImg from '../assets/logo.png'
 import './Footer.css'
 
 export default function Footer() {
