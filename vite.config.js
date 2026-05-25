@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Qissa-e-Urdu/',
+  base: process.env.VITE_BASE_URL || '/Qissa-e-Urdu/',
 })
